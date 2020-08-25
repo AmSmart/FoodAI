@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="FoodAI.Views.WelcomePage"
+             Title="{Binding Title}"
+             Visual="Material">
+    <ContentPage.Content>
+        <Grid>
+            
+            <BoxView x:Name="bdGradient" Scale="4" AnchorX="1" AnchorY="0">
+                <BoxView.Background>
+                    <LinearGradientBrush StartPoint="1,0" >
+                        <GradientStop Color="#a8e063"  />
+                        <GradientStop Color="#56ab2f"/>
+                        <GradientStop Color="#eb3349"/>
+                        <GradientStop Color="DarkRed" />
+                        
+                    </LinearGradientBrush>
+                </BoxView.Background>
+            </BoxView>
+            
+            <StackLayout>
+                <Label 
+                Text="Welcome to Health Matrix App!"
+                FontSize="Title"
+                Padding="20"
+                TextColor="White"
+                FontAttributes="Bold"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+                <Label
+                Text="{StaticResource AppAboutText}"
+                FontSize="Subtitle"
+                Padding="25, 5, 5, 25"
+                HorizontalOptions="Center"
+                TextColor="Black"/>
+                <Image Source="image.jpg"
+                   x:Name="imageView"
+                   Aspect="AspectFit"
+                   HeightRequest="300"
+                   WidthRequest="300"
+                   IsAnimationPlaying="True"
+                   BackgroundColor="Transparent"
+                   HorizontalOptions="Center"/>
+                <Button Text="Scan Now"
+                    x:Name="scanButton"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="End"
+                    HeightRequest="60"
+                    Margin="0, 60, 0, 0"
+                    BackgroundColor="White"
+                    TextColor="OrangeRed"
+                    Clicked="Button_Clicked"
+                    CornerRadius="15"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

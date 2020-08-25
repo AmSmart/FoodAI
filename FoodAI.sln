@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodAI.Android", "FoodAI\FoodAI.Android\FoodAI.Android.csproj", "{34E09AE8-57FE-45C9-A0B8-F9590BC51C0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodAI", "FoodAI\FoodAI\FoodAI.csproj", "{7AECD1D1-BFD6-4D03-B4AB-E81C0CD117A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34E09AE8-57FE-45C9-A0B8-F9590BC51C0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34E09AE8-57FE-45C9-A0B8-F9590BC51C0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34E09AE8-57FE-45C9-A0B8-F9590BC51C0D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{34E09AE8-57FE-45C9-A0B8-F9590BC51C0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34E09AE8-57FE-45C9-A0B8-F9590BC51C0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34E09AE8-57FE-45C9-A0B8-F9590BC51C0D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{7AECD1D1-BFD6-4D03-B4AB-E81C0CD117A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AECD1D1-BFD6-4D03-B4AB-E81C0CD117A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AECD1D1-BFD6-4D03-B4AB-E81C0CD117A9}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{7AECD1D1-BFD6-4D03-B4AB-E81C0CD117A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AECD1D1-BFD6-4D03-B4AB-E81C0CD117A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AECD1D1-BFD6-4D03-B4AB-E81C0CD117A9}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {09C388FC-D24A-4C60-B55B-7B6430207E30}
+	EndGlobalSection
+EndGlobal

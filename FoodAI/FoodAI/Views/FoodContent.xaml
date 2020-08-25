@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="FoodAI.Views.FoodContent"
+             Title="Scan Results">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+
+                <Label Text="{Binding TagName, 
+                    StringFormat='Food Detected: {0}'}"
+                d:Text="Rice"
+                Padding="20,30,20,5"
+                FontSize="Title"
+                TextColor="DarkRed"
+                HorizontalOptions="StartAndExpand"/>
+
+                <Label Text="{Binding DetectionProbability, 
+                    StringFormat='Detection Probability: {0}'}"
+                d:Text="Rice"
+                Padding="20,0"
+                FontSize="Title"
+                TextColor="DarkRed"
+                HorizontalOptions="StartAndExpand"/>
+
+                <Label Text="{Binding EnergyInKcal, 
+                    StringFormat='Energy Content: {0}kCal'}"
+                d:Text="Rice"
+                Padding="20,0"
+                FontSize="Title"
+                HorizontalOptions="StartAndExpand"
+                TextColor="DarkRed"/>
+
+                <Label Text="{Binding WaterInGram, 
+                    StringFormat='Water Content: {0}g'}"
+                d:Text="Rice"
+                Padding="20,5"
+                FontSize="Title"
+                HorizontalOptions="StartAndExpand"
+                TextColor="DarkRed"/>
+
+                <Label Text="{Binding ProteinInGram, 
+                    StringFormat='Protein Content: {0}g'}"
+                d:Text="Rice"
+                Padding="20,0"
+                FontSize="Title"
+                HorizontalOptions="StartAndExpand"
+                TextColor="DarkRed"/>
+
+                <Label Text="{Binding FatInGram, 
+                    StringFormat='Fat Content: {0}g'}"
+                d:Text="Rice"
+                Padding="20,5"
+                FontSize="Title"
+                HorizontalOptions="StartAndExpand"
+                TextColor="DarkRed"/>
+
+                <Label Text="{Binding CarbohydrateInGram, 
+                    StringFormat='Carbohydrate Content: {0}g'}"
+                d:Text="Rice"
+                Padding="20,0"
+                FontSize="Title"
+                HorizontalOptions="StartAndExpand"
+                TextColor="DarkRed"/>
+
+                <Label Text="{Binding FibreInGram, 
+                    StringFormat='Fibre Content: {0}g'}"
+                d:Text="Rice"
+                Padding="20,5"
+                FontSize="Title"
+                HorizontalOptions="StartAndExpand"
+                TextColor="DarkRed"/>
+
+                <Label Text="{Binding AshInGram, 
+                    StringFormat='Ash Content: {0}g'}"
+                d:Text="Rice"
+                Padding="20,0"
+                FontSize="Title"
+                HorizontalOptions="StartAndExpand"
+                TextColor="DarkRed"/>
+
+                <Label Text="{Binding CalciumInMilGram, 
+                    StringFormat='Calcium Content: {0}mg'}"
+                d:Text="Rice"
+                Padding="20,0"
+                FontSize="Title"
+                HorizontalOptions="StartAndExpand"
+                TextColor="DarkRed"/>
+
+                <Label Text="{Binding IronInMilGram, 
+                    StringFormat='Iron Content: {0}mg'}"
+                d:Text="Rice"
+                Padding="20,0"
+                FontSize="Title"
+                HorizontalOptions="StartAndExpand"
+                TextColor="DarkRed"/>
+
+                <Label Text="{Binding MagnesiumInMilGram, 
+                    StringFormat='Magnesium Content: {0}mg'}"
+                d:Text="Rice"
+                Padding="20,0"
+                FontSize="Title"
+                HorizontalOptions="StartAndExpand"
+                TextColor="DarkRed"/>
+
+                <Label Text="{Binding PhosphorusInMilGram, 
+                    StringFormat='Phosphorus Content: {0}mg'}"
+                d:Text="Rice"
+                Padding="20,0"
+                FontSize="Title"
+                HorizontalOptions="StartAndExpand"
+                TextColor="DarkRed"/>
+
+                <Label Text="{Binding PotassiumInMilGram, 
+                    StringFormat='Potassium Content: {0}mg'}"
+                d:Text="Rice"
+                Padding="20,0"
+                FontSize="Title"
+                HorizontalOptions="StartAndExpand"
+                TextColor="DarkRed"/>
+
+                <Label Text="{Binding SodiumInMilGram, 
+                    StringFormat='Sodium Content: {0}mg'}"
+                d:Text="Rice"
+                Padding="20,0"
+                FontSize="Title"
+                HorizontalOptions="StartAndExpand"
+                TextColor="DarkRed"/>
+
+                <Label Text="{Binding ZincInMilGram, 
+                    StringFormat='Zinc Content: {0}mg'}"
+                d:Text="Rice"
+                Padding="20,0"
+                FontSize="Title"
+                HorizontalOptions="StartAndExpand"
+                TextColor="DarkRed"/>
+
+                <Label Text="{Binding CopperInMilGram, 
+                    StringFormat='Copper Content: {0}mg'}"
+                d:Text="Rice"
+                Padding="20,0"
+                FontSize="Title"
+                HorizontalOptions="StartAndExpand"
+                TextColor="DarkRed"/>
+
+                <Label Text="{Binding ManganeseInMilGram, 
+                    StringFormat='Manganese Content: {0}mg'}"
+                d:Text="Rice"
+                Padding="20,0"
+                FontSize="Title"
+                HorizontalOptions="StartAndExpand"
+                TextColor="DarkRed"/>
+
+                <Label Text="Diet Suggestions:" FontAttributes="Bold" Padding="20, 50, 20, 5"/>
+                <Label Text="{Binding DietSuggestion}"/>
+                <Image/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
