@@ -21,7 +21,7 @@
             <x:String x:Key="AppAboutUs">
                 Health Matrix is an App that helps you identify your food and it's composing nutrients. Our model is currently trained to identify Bread, Rice, Eba, Fish and Chicken.
                 This wonderful app was built by our team of Engineers and a Medical personnel namely:
-                Arnold Ighiwiyisi, Brian Kariuki, Emmanuel Oluwagbemiga Adebiyi, Joseph Victor Tochukwu, Akinbi Olubayode, Richie Uchenna Akparuorji, Richie Uchenna Akparuorji, Aonullahi Adebayo
+                Arnold Ighiwiyisi, Brian Kariuki, Emmanuel Oluwagbemiga Adebiyi, Joseph Victor Tochukwu, Akinbi Olubayode, Richie Uchenna Akparuorji, Aonullahi Adebayo
                 
             </x:String>
         </ResourceDictionary>
