@@ -27,12 +27,12 @@ namespace FoodAI.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            firstAppear = false;
             if (firstAppear)
             {
                 TextToSpeech.SpeakAsync($"{_model.TagName} has been detected");
                 TextToSpeech.SpeakAsync(_model.DietSuggestion);
             }
+            firstAppear = false;
         }
     }
 }
