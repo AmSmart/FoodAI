@@ -154,9 +154,10 @@
                 HorizontalOptions="StartAndExpand"
                 TextColor="DarkRed"/>
 
-                <Label Text="Diet Suggestions:" FontAttributes="Bold" Padding="20, 50, 20, 5"/>
-                <Label Text="{Binding DietSuggestion}"/>
-                <Image/>
+                <Label Text="Diet Suggestions:" FontSize="Title" TextColor="Green" FontAttributes="Bold" Padding="20, 50, 20, 5"/>
+                <Label Text="{Binding DietSuggestion}" FontSize="Subtitle" TextColor="Green"/>
+                <Image Source="{Binding ImageSource}"
+                       Aspect="AspectFit"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace FoodAI.ViewModels
 {
@@ -30,7 +31,7 @@ namespace FoodAI.ViewModels
         public double CopperInMilGram { get; set; }
         public double ManganeseInMilGram { get; set; }
 
-        public BoundingBox BoundingBox { get; set; }
+        public ImageSource ImageSource { get; set; }
 
         public double DetectionProbability { get; set; }
     }

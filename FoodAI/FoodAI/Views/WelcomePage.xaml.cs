@@ -22,56 +22,63 @@ namespace FoodAI.Views
         const string EndPoint = "https://southcentralus.api.cognitive.microsoft.com/";
         const string ProjectId = "5a28b1ff-6ded-475b-bde6-3261350df3b7";
         const string PublishedModelName = "Iteration5";
+        readonly IObjectDetector _objectDetector;
 
         public WelcomePage()
         {
             InitializeComponent();
             Title = "Welcome";
             BindingContext = this;
-            Task.Run(AnimateBackground); 
-            
+            Task.Run(AnimateBackground);
+            _objectDetector = DependencyService.Get<IObjectDetector>();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
             imageView.Source = "loading.gif";
             scanButton.IsEnabled = false;
+            galleryButton.IsEnabled = false;
 
-            await CrossMedia.Current.Initialize();
+            await CrossMedia.Current.Initialize();            
 
             if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
             {
                 await DisplayAlert("No Camera", ":( No camera available.", "OK");
                 imageView.Source = "image.jpg";
                 scanButton.IsEnabled = true;
+                galleryButton.IsEnabled = true;
                 return;
             }
 
             try
             {
                 PredictionModel predictionModel = null;
-                //PhotoView.SetImageBitmap(bitmap);
-                //var result = await Task.Run(() => imageClassifier.RecognizeImage(bitmap));
-#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
-                //CrossTextToSpeech.Current.Speak($"I think it is {result}");
-#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
-                //ResultLabel.Text = result;
-                await Task.Run(async () =>
+                ImagePrediction result = null;
+                var image = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions { PhotoSize = PhotoSize.Medium });                
+                var imageStream = image.GetStream();
+                byte[] imageArray;
+                using (var memoryStream = new MemoryStream())
                 {
-                    var image = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions { PhotoSize = PhotoSize.Medium });                    
-                    var imageStream = image.GetStream();
+                    imageStream.CopyTo(memoryStream);
+                    imageArray = memoryStream.ToArray();
+                }
 
+                await Task.Run(() =>
+                {
                     CustomVisionPredictionClient endpoint = new CustomVisionPredictionClient(new ApiKeyServiceClientCredentials(PredictionKey))
                     {
                         Endpoint = EndPoint
                     };
-                    var result = endpoint.DetectImage(Guid.Parse(ProjectId), PublishedModelName, imageStream);
-                    foreach (var c in result.Predictions)
-                    {
-                        Console.WriteLine($"\t{c.TagName}: {c.Probability:P1} [ {c.BoundingBox.Left}, {c.BoundingBox.Top}, {c.BoundingBox.Width}, {c.BoundingBox.Height} ]");
-                    }
+                    using(var mStream = new MemoryStream(imageArray))
+                        result = endpoint.DetectImage(Guid.Parse(ProjectId), PublishedModelName, mStream);
+                    
                     double maxProb = result.Predictions.Select(x => x.Probability).Max();
-                    if(maxProb < 0.1)
+                    if(maxProb < 0.45)
                     {
                         throw new Exception("No food detected");
                     }
@@ -79,10 +86,16 @@ namespace FoodAI.Views
                 });
                 
                 var model = GetViewModel(predictionModel.TagName);
-                model.BoundingBox = predictionModel.BoundingBox;
                 model.DetectionProbability = predictionModel.Probability;
-                //give model an image
+
+                var boundedImageArray = await _objectDetector.DrawBoundingBox(imageArray, predictionModel.BoundingBox);
+
+                var imageSource = ImageSource.FromStream(() => new MemoryStream(boundedImageArray));
+
+                model.ImageSource = imageSource;
+
                 scanButton.IsEnabled = true;
+                galleryButton.IsEnabled = true;
                 imageView.Source = "image.jpg";
                 await Navigation.PushAsync(new FoodContent(model));
             }
@@ -91,6 +104,7 @@ namespace FoodAI.Views
                 imageView.Source = "image.jpg";
                 await DisplayAlert("Error", ex.Message, "Done");
                 scanButton.IsEnabled = true;
+                galleryButton.IsEnabled = true;
             }
         }
 
@@ -173,6 +187,77 @@ namespace FoodAI.Views
             return model;
         }
 
-        
+        private async void galleryButton_Clicked(object sender, EventArgs e)
+        {
+            imageView.Source = "loading.gif";
+            scanButton.IsEnabled = false;
+            galleryButton.IsEnabled = false;
+
+            try
+            {
+                PredictionModel predictionModel = null;
+                ImagePrediction result = null;
+                if (!CrossMedia.Current.IsPickPhotoSupported)
+                {
+                    await DisplayAlert("Photos Not Supported", ":( Permission not granted to photos.", "OK");
+                    return;
+                }
+
+                var image = await CrossMedia.Current.PickPhotoAsync(new PickMediaOptions
+                {
+                    PhotoSize = PhotoSize.Medium,
+
+                });
+
+                if (image == null)
+                    return;
+
+                var imageStream = image.GetStream();
+                byte[] imageArray;
+                using (var memoryStream = new MemoryStream())
+                {
+                    imageStream.CopyTo(memoryStream);
+                    imageArray = memoryStream.ToArray();
+                }
+
+                await Task.Run(() =>
+                {
+                    CustomVisionPredictionClient endpoint = new CustomVisionPredictionClient(new ApiKeyServiceClientCredentials(PredictionKey))
+                    {
+                        Endpoint = EndPoint
+                    };
+
+                    using (var mStream = new MemoryStream(imageArray))
+                        result = endpoint.DetectImage(Guid.Parse(ProjectId), PublishedModelName, mStream);
+                    
+                    double maxProb = result.Predictions.Select(x => x.Probability).Max();
+                    if (maxProb < 0.45)
+                    {
+                        throw new Exception("No food detected");
+                    }
+                    predictionModel = result.Predictions.First(x => x.Probability == maxProb);
+                });
+
+                var model = GetViewModel(predictionModel.TagName);
+                model.DetectionProbability = predictionModel.Probability;
+
+                var boundedImageArray = await _objectDetector.DrawBoundingBox(imageArray, predictionModel.BoundingBox);
+                var imageSource = ImageSource.FromStream(() => new MemoryStream(boundedImageArray));
+
+                model.ImageSource = imageSource;
+
+                scanButton.IsEnabled = true;
+                galleryButton.IsEnabled = true;
+                imageView.Source = "image.jpg";
+                await Navigation.PushAsync(new FoodContent(model));
+            }
+            catch(Exception ex)
+            {
+                imageView.Source = "image.jpg";
+                await DisplayAlert("Error", ex.Message, "Done");
+                scanButton.IsEnabled = true;
+                galleryButton.IsEnabled = true;
+            }
+        }
     }
 }

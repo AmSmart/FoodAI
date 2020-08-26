@@ -9,7 +9,7 @@
              Visual="Material">
     <ContentPage.Content>
         <Grid>
-            
+
             <BoxView x:Name="bdGradient" Scale="4" AnchorX="1" AnchorY="0">
                 <BoxView.Background>
                     <LinearGradientBrush StartPoint="1,0" >
@@ -17,45 +17,61 @@
                         <GradientStop Color="#56ab2f"/>
                         <GradientStop Color="#eb3349"/>
                         <GradientStop Color="DarkRed" />
-                        
+
                     </LinearGradientBrush>
                 </BoxView.Background>
             </BoxView>
-            
-            <StackLayout>
-                <Label 
-                Text="Welcome to Health Matrix App!"
-                FontSize="Title"
-                Padding="20"
-                TextColor="White"
-                FontAttributes="Bold"
-                VerticalOptions="Start" 
-                HorizontalOptions="CenterAndExpand" />
-                <Label
-                Text="{StaticResource AppAboutText}"
-                FontSize="Subtitle"
-                Padding="25, 5, 5, 25"
-                HorizontalOptions="Center"
-                TextColor="Black"/>
-                <Image Source="image.jpg"
-                   x:Name="imageView"
-                   Aspect="AspectFit"
-                   HeightRequest="300"
-                   WidthRequest="300"
-                   IsAnimationPlaying="True"
-                   BackgroundColor="Transparent"
-                   HorizontalOptions="Center"/>
-                <Button Text="Scan Now"
-                    x:Name="scanButton"
-                    HorizontalOptions="CenterAndExpand"
-                    VerticalOptions="End"
-                    HeightRequest="60"
-                    Margin="0, 60, 0, 0"
-                    BackgroundColor="White"
-                    TextColor="OrangeRed"
-                    Clicked="Button_Clicked"
-                    CornerRadius="15"/>
-            </StackLayout>
+
+            <ScrollView>
+                <StackLayout>
+                    <Label 
+                        Text="Welcome to Health Matrix App!"
+                        FontSize="Title"
+                        Padding="20"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        VerticalOptions="Start" 
+                        HorizontalOptions="CenterAndExpand" />
+                    
+                    <Label
+                        Text="{StaticResource AppAboutText}"
+                        FontSize="Subtitle"
+                        Padding="25, 5, 5, 15"
+                        HorizontalOptions="Center"
+                        TextColor="Black"/>
+                    
+                    <Image Source="image.jpg"
+                        x:Name="imageView"
+                        Aspect="AspectFit"
+                        HeightRequest="250"
+                        WidthRequest="250"
+                        IsAnimationPlaying="True"
+                        BackgroundColor="Transparent"
+                        HorizontalOptions="Center"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Button Text="Scan Now"
+                            x:Name="scanButton"
+                            HorizontalOptions="CenterAndExpand"
+                            VerticalOptions="End"
+                            HeightRequest="60"
+                            Margin="0, 10, 0, 0"
+                            BackgroundColor="White"
+                            TextColor="OrangeRed"
+                            Clicked="Button_Clicked"
+                            CornerRadius="15"/>
+                        <Button Text="Gallery"
+                            HeightRequest="60"
+                            x:Name="galleryButton"
+                            Clicked="galleryButton_Clicked"
+                            Margin="0, 10, 0, 0"
+                            BackgroundColor="White"
+                            TextColor="OrangeRed"
+                            HorizontalOptions="CenterAndExpand"
+                            VerticalOptions="End"
+                            CornerRadius="15"/>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
