@@ -69,6 +69,7 @@
     <Compile Include="SplashScreenActivity.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Artifacts\com.foodai.healthmatrix.apk" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
