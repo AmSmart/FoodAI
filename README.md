@@ -13,4 +13,4 @@ The motivation behind this project is based on this problem statment :arrow_down
 
 According to [WHO](https://www.who.int/) 
 > Malnutrition refers to deficiencies, excesses or imbalances in a person’s intake of energy and/or nutrients 
-<img src='./images/malnutrition2.jpg' width="400px" align="right">An estimated 2 million children in Nigeria suffer from severe acute malnutrition (SAM).
+<img src='./images/malnutrition2.jpg' width="500px" align="center">An estimated 2 million children in Nigeria suffer from severe acute malnutrition (SAM).
