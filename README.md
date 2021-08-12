@@ -4,7 +4,7 @@ An Android app to scan and identify food and provide nutritional recommendation 
 Built with Xamarin.Forms and Azure Cognitive Services
 
 ## Motivation
-The motivation behind this project is based on this problem statment:
+The motivation behind this project is based on this problem statment :arrow_down:
 >  Assessing the nutritional contents of individual food choices against standards and providing recommendations in order to prevent all forms of malnutrition. **
 
 <div align='center'>
