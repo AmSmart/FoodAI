@@ -32,3 +32,8 @@ According to [WHO](https://www.who.int/)
 - Get Nutritional Facts Using Nigerian Food Database
 - Used [Nigerian Food Database from University of Ibadan](http://nigeriafooddata.ui.edu.ng/Database)
 - User Get Diet Recommendation Based on Food class detected
+
+## App Architecture
+<div align='center'>
+  <img src='./images/architecture.png' width="500px">
+</div>
