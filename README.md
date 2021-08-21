@@ -41,7 +41,7 @@ According to [WHO](https://www.who.int/)
 ## Demo
 
 <img src="UI_1.png" width="425"/> <img src="UI_2.png" width="425"/> 
-<img src="https://openclipart.org/image/2400px/svg_to_png/28580/kablam-Number-Animals-1.png" width="200"/> <img src="https://openclipart.org/download/71101/two.svg" width="300"/>
+<img src="UI_1.png" width="200"/> <img src="UI_2.png" width="300"/>
 
 <!-- <p float="left">
   <img src="/UI_1.png" width="100" />
