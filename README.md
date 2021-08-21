@@ -47,6 +47,5 @@ According to [WHO](https://www.who.int/)
 - Adding More Food classes
 - Diet Advice from Nutritionist
 - Improve UI
-- Data can be  crowd sourced to impove mAP
 - Recommendation can  be based on Food Quantity 
-- plus type of malnutrition
+- Diet recommendation can be based on the type of malnutrition
