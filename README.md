@@ -37,3 +37,9 @@ According to [WHO](https://www.who.int/)
 <div align='center'>
   <img src='./images/architecture.png' width="500px">
 </div>
+## Demo
+<p float="left">
+  <img src="/UI_1.png" width="100" />
+  <img src="/UI_2.png" width="100" /> 
+  <img src="/UI_3.png" width="100" />
+</p>
