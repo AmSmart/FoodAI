@@ -16,6 +16,7 @@ According to [WHO](https://www.who.int/)
 <img src='./images/malnutrition2.jpg' width="500px" align="right"> - An estimated 2 million children in Nigeria suffer from severe acute malnutrition (SAM). 1.9 billion adults are overweight or obese, while 462 million are underweight. 14.3 million are severely wasted and 144 million are stunted, while 38.3 million are overweight or obese.<br>
 
 <br>
+
 ## Can AI help ?
 
 <div align='center'>
