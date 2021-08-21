@@ -28,7 +28,7 @@ According to [WHO](https://www.who.int/)
 </div>
 
 ## Our Solution: An AI Powered App for Diet Recommendation
-- Made with Locally Sourced Nigerian Food Dataset (Eba, Rice, Fish, Chicken, Bread)
+- Made with Locally Sourced Nigerian Food [Dataset](https://drive.google.com/drive/folders/1zxRJTOuBznBRbXpFDNzXMHGK4GD5NvPg?usp=sharing) (Eba, Rice, Fish, Chicken, Bread)
 - Get Nutritional Facts Using Nigerian Food Database
 - Used [Nigerian Food Database from University of Ibadan](http://nigeriafooddata.ui.edu.ng/Database)
 - User Get Diet Recommendation Based on Food class detected
