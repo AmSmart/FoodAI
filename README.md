@@ -17,11 +17,11 @@ According to [WHO](https://www.who.int/)
 
 <br>
 
-## Can AI help ?
+<!-- ## Can AI help ?
 
 <div align='center'>
   <img src='./images/can_AI_help.jpeg' width="500px">
-</div>
+</div> -->
 
 ## Our Solution: An AI Powered App for Diet Recommendation
 - Made with Locally Sourced Nigerian Food Dataset (Eba, Rice, Fish, Chicken, Bread)
