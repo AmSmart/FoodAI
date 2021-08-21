@@ -45,7 +45,7 @@ According to [WHO](https://www.who.int/)
 
 - This is just the First Iteration
 - Adding More Food classes
-- Diet Advice from Nutritionist
+- Diet Advice from professional utritionist
 - Improve UI
 - Recommendation can  be based on Food Quantity 
 - Diet recommendation can be based on the type of malnutrition
