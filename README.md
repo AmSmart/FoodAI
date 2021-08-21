@@ -39,11 +39,5 @@ According to [WHO](https://www.who.int/)
 </div>
 
 ## Demo
-
-div align='center'>
-  <img src='./images/architecture.png' width="500px">
-</div>
-
-<img src="./images/UI_1.png" width="200"/> <img src="./images/UI_2.png" width="200"/> 
-<img src="UI_1.png" width="200"/> <img src="UI_2.png" width="300"/>
+<img src="./images/UI_1.png" width="200"/> <img src="./images/UI_2.png" width="200"/> <img src="./images/UI_3.png" width="200"/> 
 
