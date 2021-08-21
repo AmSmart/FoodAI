@@ -41,3 +41,12 @@ According to [WHO](https://www.who.int/)
 ## Demo
 <img src="./images/UI_1.png" width="200"/> <img src="./images/UI_2.png" width="200"/> <img src="./images/UI_3.png" width="200"/> 
 
+## Future Improvement
+
+- This is just the First Iteration
+- Adding More Food classes
+- Diet Advice from Nutritionist
+- Improve UI
+- Data can be  crowd sourced to impove mAP
+- Recommendation can  be based on Food Quantity 
+- plus type of malnutrition
