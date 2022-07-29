@@ -1,5 +1,5 @@
 # FoodAI
-An Android app to scan and identify food and provide nutritional recommendation based on detected food class
+An Android application to scan and identify food and provide nutritional recommendation based on detected food class
 
 Built with Xamarin.Forms and Azure Cognitive Services
 
@@ -44,8 +44,8 @@ According to [WHO](https://www.who.int/)
 ## Future Improvement
 
 - This is just the First Iteration
-- Adding More Food classes
-- Diet Advice from professional utritionist
-- Improve UI
+- Adding More Food classes for recommendation
+- Diet Advice from professional Nutritionist
+- Improve the UI
 - Recommendation can  be based on Food Quantity 
 - Diet recommendation can be based on the type of malnutrition
